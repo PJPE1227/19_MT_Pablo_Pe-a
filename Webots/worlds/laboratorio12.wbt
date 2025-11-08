@@ -1,0 +1,323 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/obstacles/protos/OilBarrel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 5.3927752251825224e-05 2.37611702431026e-05 47.678819553356945
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 20 20
+  floorTileSize 2 2
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+  wallThickness 0.1
+}
+DEF Pololu1 Robot {
+  translation 7.116079037250265 6.836111912816166 -0.0021485223201787793
+  rotation -0.0013442082101189294 -0.0036060356081942815 0.9999925947783215 2.4270540566417793
+  children [
+    Display {
+    }
+    DEF Body Pose {
+      translation 0 0 0.0255
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.019
+            radius 0.075
+          }
+        }
+      ]
+    }
+    Compass {
+      rotation 0 0 1 1.5707996938995747
+    }
+    GPS {
+      rotation 0 0 1 1.5707996938995747
+    }
+    Transform {
+      translation 0 0 0.016
+      scale 0.001 0.001 0.001
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "../Modelos_3D/Pololu/BumperSinEje.stl"
+            ]
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -1054.407109408413
+        anchor 0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+          maxVelocity 84
+        }
+      ]
+      endPoint Solid {
+        translation 0.07 0 0.037
+        rotation -0.446402146101375 0.7757366635602438 -0.446046805575948 1.8212809760755737
+        children [
+          DEF wheel_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        boundingObject USE wheel_1
+        physics Physics {
+        }
+        linearVelocity -0.10739845613809544 -0.12377993266662383 -0.00017540899676495698
+        angularVelocity 3.537117498546253 -3.0689968208031413 0.005398486776288719
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -1729.1975945274664
+        anchor -0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_2"
+          maxVelocity 84
+        }
+      ]
+      endPoint Solid {
+        translation -0.07 0 0.037
+        rotation 0.523396900293005 -0.6727163746473868 0.5229802711813814 4.326688721612933
+        children [
+          DEF wheel_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE wheel_2
+        physics Physics {
+        }
+        linearVelocity -0.1069289123995285 -0.12323925988070013 -0.00017352153627195552
+        angularVelocity 3.5206773471066137 -3.0547295008691937 0.005397875277924664
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        position 1056.0372142212057
+        anchor 0 0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        position 3.030296151559032
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        position 481.1959939579576
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation 0.0025041944222384815 0.06051553436151558 0.012331036752509912
+        rotation 0.8787494901427089 0.42773427545588655 0.2117610048478169 2.290687365670195
+        children [
+          DEF CasterBall_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE CasterBall_1
+        physics Physics {
+        }
+        linearVelocity -0.10005806817933202 -0.11735834770486264 0.009051172099007297
+        angularVelocity 11.735826527822457 -10.005807922954135 -3.308673615127206
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        position -1575.1525430524819
+        anchor 0 -0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        position -2.5029253807825214
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        position 2290.4846255570915
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation 0.00024906401741175976 -0.06204935999709349 0.012040212507299336
+        rotation 0.248575119709357 0.19019278663314887 -0.949756344424293 -1.7946541242337108
+        children [
+          DEF CasterBall_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE CasterBall_2
+        physics Physics {
+        }
+        linearVelocity -0.10126949272947895 -0.1168913562479109 0.012682867796705946
+        angularVelocity 11.689129169153585 -10.126945597047872 -0.23051630766977815
+      }
+    }
+  ]
+  name "Pololu3Pi"
+  contactMaterial "plastic"
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "pololu3pi_controller"
+  supervisor TRUE
+  selfCollision TRUE
+  linearVelocity -0.10894842555975862 -0.12556513436731823 -0.00018701556366149705
+  angularVelocity -0.17877504027790808 0.15510417790558745 0.005113783113011813
+}
+Pose {
+  children [
+    DEF TRAJECTORY Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+        }
+      }
+      geometry IndexedLineSet {
+        coord Coordinate {
+          point [
+            0 0 0
+            0 0 0
+          ]
+        }
+        coordIndex [
+          0, 1
+        ]
+      }
+    }
+  ]
+}
+Robot {
+  name "Supervisor"
+  controller "supervisor_controller"
+  supervisor TRUE
+}
+DEF obs1 OilBarrel {
+  translation 0 0 -0.1
+  name "obs1"
+  height 0.1
+  radius 0.45
+}
+DEF obs2 OilBarrel {
+  translation 0 0 -0.1
+  name "obs2"
+  height 0.1
+  radius 0.45
+}
+DEF obs3 OilBarrel {
+  translation 0 0 -0.1
+  name "obs3"
+  height 0.1
+  radius 0.45
+}
+DEF obs4 OilBarrel {
+  translation 0 0 -0.1
+  name "obs4"
+  height 0.1
+  radius 0.45
+}
+DEF obs5 OilBarrel {
+  translation 0 0 -0.1
+  name "obs5"
+  height 0.1
+  radius 0.45
+}
+DEF obs6 OilBarrel {
+  translation 0 0 -0.1
+  name "obs6"
+  height 0.1
+  radius 0.45
+}
+DEF obs7 OilBarrel {
+  translation 0 0 -0.1
+  name "obs7"
+  height 0.1
+  radius 0.45
+}
+DEF obs8 OilBarrel {
+  translation 0 0 -0.1
+  name "obs8"
+  height 0.1
+  radius 0.45
+}
+DEF obs9 OilBarrel {
+  translation 0 0 -0.1
+  name "obs9"
+  height 0.1
+  radius 0.45
+}
+DEF obs10 OilBarrel {
+  translation 0 0 -0.1
+  name "obs10"
+  height 0.1
+  radius 0.45
+}
+DEF obs11 OilBarrel {
+  translation 0 0 -0.1
+  name "obs11"
+  height 0.1
+  radius 0.45
+}
+DEF obs12 OilBarrel {
+  translation 0 0 -0.1
+  name "obs12"
+  height 0.1
+  radius 0.45
+}
