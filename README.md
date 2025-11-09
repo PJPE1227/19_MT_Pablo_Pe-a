@@ -1,4 +1,4 @@
-# Implementación y validación de algoritmos de inteligencia de enjambre para planificación de trayectorias y problemas de optimización
+# Implementación y validación de distintos algoritmos de inteligencia de enjambre para aplicaciones de ingeniería Mecatrónica
 
 **Autor:** Pablo Peña  
 **Universidad del Valle de Guatemala**  
